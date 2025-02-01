@@ -9,17 +9,41 @@
             :content="post.content"
         />
     </main>
-    <LoginForm
+    <GetStartedForm
+        v-if="type === 'auth'"
         @google="handleGoogleLogin"
         @apple="handleAppleLogin"
-        @email="handleEmailLogin"
-        @signup="handleSignup"
+        @email="goToRoute('login')"
+        @signup="goToRoute('signup')"
+    />
+    <LoginEmailForm
+        v-if="type === 'login'"
     />
 </template>
 
 <script setup lang="ts">
 import BaseCard from '@/components/BaseCard.vue'
-import LoginForm from '@/components/GetStartedForm.vue'
+import GetStartedForm from '@/components/GetStartedForm.vue';
+import LoginEmailForm from '@/components/LoginEmailForm.vue';
+import router from '@/router';
+
+defineProps<{
+    type: string
+}>()
+
+function handleGoogleLogin() {
+    alert('Login via Google');
+}
+
+function handleAppleLogin() {
+    alert('Login via Apple');
+}
+
+function goToRoute(name: string) {
+    router.push({
+        name: name
+    })
+}
 
 const posts = [
     {
@@ -129,22 +153,6 @@ const posts = [
         size: 'small',
     },
 ]
-
-function handleGoogleLogin() {
-    alert('Login via Google');
-}
-
-function handleAppleLogin() {
-    alert('Login via Apple');
-}
-
-function handleEmailLogin() {
-    alert('Email');
-}
-
-function handleSignup() {
-    alert('Signup');
-}
 </script>
 
 <style scoped lang="scss">
@@ -154,14 +162,14 @@ main {
     background: $primary;
     height: 100vh;
     width: 100vw;
-    padding: 32px;
+    padding: $val-32;
     overflow: hidden;
     position: relative;
 
     display: grid;
     grid-template-columns: repeat(auto-fill, 520px);
-    grid-auto-rows: 12px;
-    grid-column-gap: 28px;
+    grid-auto-rows: $val-12;
+    grid-column-gap: $val-28;
     justify-content: center;
 
     .card {

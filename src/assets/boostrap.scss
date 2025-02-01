@@ -1,12 +1,13 @@
 @import '@/assets/reset.scss';
+@import '@/assets/variables.scss';
 
 .text {
     &-primary {
         color: $primary;
     }
 
-    &-secondary {
-        color: $secondary;
+    &-c-secondary {
+        color: $secondary !important;
     }
 
     &-tertiary {
@@ -16,36 +17,50 @@
     &-quaternary {
         color: $quaternary;
     }
+
+    &-accent {
+        color: $accent;
+    }
+
+    &-semi-small {
+        font-size: $val-15;
+    }
 }
 
 .btn {
-    height: 44px;
-    border-radius: 8%/100%;
+    height: $val-44;
+    border-radius: 10%/100% !important;
+
+    &-primary {
+        background-color: $accent !important;
+    }
 
     &-outline{
         &-primary {
-            border-color: $accent;
-            color: $accent;
+            border-color: $accent !important;
+            color: $accent !important;
 
             &:hover {
-                background-color: $accent;
+                background-color: $accent !important;
+                color: $white !important;
             }
         }
 
         &-secondary {
-            border-color: $quaternary;
-            color: $primary;
+            border-color: $quaternary !important;
+            color: $primary !important;
 
             i {
-                color: $secondary;
-                font-size: 20px;
+                color: $secondary !important;
+                font-size: $val-20;
             }
 
             &:hover {
-                background: $tertiary;
+                background: $tertiary !important;
+                color: $white !important;
 
                 i {
-                    color: $white;
+                    color: $white !important;
                 }
             }
         }

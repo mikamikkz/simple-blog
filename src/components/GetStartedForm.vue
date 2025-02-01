@@ -6,7 +6,7 @@
                 <div class="d-flex flex-column gap-2">
                     <p class="text-tertiary mb-0 ms-2">Login or Sign up with</p>
                     <button
-                        class="btn btn-outline-secondary"
+                        class="btn btn-outline-secondary mb-1"
                         type="button"
                         @click="$emit('google')"
                     >
@@ -16,7 +16,7 @@
                         </div>
                     </button>
                     <button
-                        class="btn btn-outline-secondary"
+                        class="btn btn-outline-secondary mb-1"
                         type="button"
                         @click="$emit('apple')"
                     >
@@ -64,7 +64,7 @@
     width: 480px;
 
     img {
-        width: 20px;
+        width: $val-20;
     }
 
     .divider {
@@ -75,8 +75,8 @@
         &:before {
             content: '';
             position: absolute;
-            top: 13px;
-            height: 1px;
+            top: $val-13;
+            height: $val-1;
             width: 46%;
             background-color: $quaternary;
         }
