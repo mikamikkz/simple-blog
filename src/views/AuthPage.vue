@@ -118,7 +118,6 @@ main {
   grid-template-columns: repeat(auto-fill, 520px);
   grid-auto-rows: 12px;
   grid-column-gap: 28px;
-  // gap: 40px;
   justify-content: center;
 
   .card {
