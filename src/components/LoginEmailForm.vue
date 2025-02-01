@@ -22,7 +22,7 @@
                         label="Password"
                         id="password"
                         type="text"
-                        v-model="email"
+                        v-model="password"
                     />
                     <a href="" class="text-accent link-underline link-underline-opacity-0 text-end">
                         Forgot password?
@@ -52,6 +52,7 @@ import InputField from './InputField.vue';
 import router from '@/router';
 
 const email = ref('');
+const password = ref('');
 
 function goBack() {
     router.push({
