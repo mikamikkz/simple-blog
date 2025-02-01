@@ -1,4 +1,4 @@
-# simple-blog
+# Vue Simple Blog
 
 This is a simple blog web app using Vue 3, Typescript and Bootstrap with the following pages:
 - Login
