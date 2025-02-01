@@ -63,6 +63,8 @@ const model = defineModel()
             left: $val-9;
             padding-inline: 4px;
             transition: top .1s ease-in-out;
+            user-select: none;
+            pointer-events: none;
 
             &.filled {
                 @include filled-input-label;

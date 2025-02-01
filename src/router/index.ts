@@ -10,15 +10,25 @@ const router = createRouter({
             component: AuthPage,
             props: {
                 type: 'auth',
-            }
-        }, {
+            },
+        },
+        {
             path: '/login',
             name: 'login',
             component: AuthPage,
             props: {
                 type: 'login',
-            }
-        }, {
+            },
+        },
+        {
+            path: '/signup',
+            name: 'signup',
+            component: AuthPage,
+            props: {
+                type: 'signup',
+            },
+        },
+        {
             path: '/profile',
             name: 'profile',
             component: () => import('@/views/ProfilePage.vue'),

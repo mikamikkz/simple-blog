@@ -9,22 +9,24 @@
             :content="post.content"
         />
     </main>
-    <GetStartedForm
-        v-if="type === 'auth'"
-        @google="handleGoogleLogin"
-        @apple="handleAppleLogin"
-        @email="goToRoute('login')"
-        @signup="goToRoute('signup')"
-    />
-    <LoginEmailForm
-        v-if="type === 'login'"
-    />
+    <div class="form-container d-flex align-items-start justify-content-center">
+      <GetStartedForm
+          v-if="type === 'auth'"
+          @google="handleGoogleLogin"
+          @apple="handleAppleLogin"
+          @email="goToRoute('login')"
+          @signup="goToRoute('signup')"
+      />
+      <LoginEmailForm v-if="type === 'login'" />
+      <SignupForm v-if="type === 'signup'" />
+    </div>
 </template>
 
 <script setup lang="ts">
 import BaseCard from '@/components/BaseCard.vue'
 import GetStartedForm from '@/components/GetStartedForm.vue';
 import LoginEmailForm from '@/components/LoginEmailForm.vue';
+import SignupForm from '@/components/SignupForm.vue';
 import router from '@/router';
 
 defineProps<{
@@ -185,10 +187,11 @@ main {
     }
 }
 
-.login-form {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.form-container {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    margin-top: 160px
 }
 </style>

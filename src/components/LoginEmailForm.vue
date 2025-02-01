@@ -35,11 +35,12 @@
                 </button>
                 <p class="text-tertiary text-semi-small text-center">
                     Don't have an account?
-                    <a
-                        href="https://vuejs.org/guide/essentials/reactivity-fundamentals.html" class="text-accent link-underline link-underline-opacity-0"
+                    <router-link
+                        to="signup"
+                        class="text-accent link-underline link-underline-opacity-0"
                     >
                         Signup here
-                    </a>
+                    </router-link>
                 </p>
             </div>
         </div>
